@@ -1,0 +1,21 @@
+server:
+  port: 9020
+
+spring:
+  reactor:
+    context-propagation: auto
+  application:
+    name: package-web
+  config:
+    import: optional:nacos:package-web.yaml
+  cloud:
+    nacos:
+      username: nacos
+      password: lendypwd
+      config:
+        server-addr: localhost:8848
+        namespace: 33f2f534-6e0c-46c5-a15d-f9bac74bd479
+        file-extension: yaml
+      discovery:
+        server-addr: ${spring.cloud.nacos.config.server-addr}
+        namespace: ${spring.cloud.nacos.config.namespace}
