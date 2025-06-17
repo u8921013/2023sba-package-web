@@ -2,3 +2,18 @@ server:
   port: 9020
   servlet:
     context-path: /package-web
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true
+file:
+  upload-dir: uploads
