@@ -4,6 +4,7 @@ import net.ubn.td.entity.PackageTask;
 import net.ubn.td.repository.PackageTaskRepository;
 import net.ubn.td.util.UuidV7Generator;
 import org.springframework.stereotype.Service;
+import java.time.LocalDateTime;
 
 @Service
 public class PackageTaskServiceImpl implements PackageTaskService {
@@ -21,6 +22,8 @@ public class PackageTaskServiceImpl implements PackageTaskService {
         task.setFileId(fileId);
         task.setPackageType(packageType);
         task.setStatus("initial");
+        task.setRetryCount(0);
+        task.setModificationDate(LocalDateTime.now());
         repository.save(task);
         return task.getId().toString();
     }
