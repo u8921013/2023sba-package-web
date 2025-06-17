@@ -9,4 +9,5 @@ import java.util.Optional;
 
 public interface FileRecordRepository extends JpaRepository<FileRecord, UUID> {
     Optional<FileRecord> findByDirAndStoredFilename(String dir, String storedFilename);
+    Optional<FileRecord> findByFileId(String fileId);
 }
