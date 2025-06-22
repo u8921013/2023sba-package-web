@@ -5,9 +5,9 @@ spring:
   reactor:
     context-propagation: auto
   application:
-    name: package-web
+    name: package-service
   config:
-    import: optional:nacos:package-web.yaml
+    import: optional:nacos:package-service.yaml
   cloud:
     nacos:
       username: nacos
@@ -19,3 +19,4 @@ spring:
       discovery:
         server-addr: ${spring.cloud.nacos.config.server-addr}
         namespace: ${spring.cloud.nacos.config.namespace}
+

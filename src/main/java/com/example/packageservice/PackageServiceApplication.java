@@ -1,13 +1,15 @@
-package net.ubn.td;
+package com.example.packageservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
+@EnableScheduling
 @EnableDiscoveryClient
-public class PackageWebApplication {
+public class PackageServiceApplication {
     public static void main(String[] args) {
-        SpringApplication.run(PackageWebApplication.class, args);
+        SpringApplication.run(PackageServiceApplication.class, args);
     }
 }
